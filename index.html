@@ -1,12 +1,19 @@
 <html>
 <body>
-        <div id="header"><nav><img src=poksocks.jpg></nav></div>
+        <div id="header"><nav><img src=poksocksg.jpg></nav></div>
+
+
+
+        <div id="divcenter"> <p>hey.</p> 
+          <p>i'm an artist and game developer in godot.</p>
+          <p>i currently dont have very much game stuff uploaded externally, unfortunately.</p>
+          <p>check out some of my older unupdated <a href="" style="color:azure">stuff.</a></p>
+        
+        </div>
+
 
 <div id="divanim">
-        <img class="top" src="goober.png" />
-                <img src="goober.png" />
-                <img src="goober.png" />
-                <img class="bottom" src="goober.png" />
+        <img class="bottom" src="goober.png" style="width: 370px; height: 200px; -webkit-transform: translate(75px, 30px);"/>
 
 
 </div>
@@ -21,10 +28,9 @@
 <li class="block"><img src="block1.png"
 </ul>
 -->
-<div id="towerimg"
-<img src="tower-removebg-preview.png">
+<div id="towerimg">
+<img src="tower2.png" style="width: auto; margin-left: auto;, margin-right: auto;" class="center">
 </div>
-
 
 
 
@@ -107,26 +113,26 @@ background-image:url("duotone.png");
     opacity:1; top: 0px; left: 0px; right: 0px; transform: rotate(3deg);
   }
   25% {
-    opacity:0; top: 0px; left: 0px; right: 0px; transform: rotate(6deg);
+    opacity:1; top: 0px; left: 0px; right: 0px; transform: rotate(6deg);
   }
   92% {
-    opacity:0; top: 0px; left: 0px; right: 0px; transform: rotate(9deg);
+    opacity:1; top: 0px; left: 0px; right: 0px; transform: rotate(9deg);
   }
   100% {
     opacity:1; top: 0px; left: 0px; right: 0px; transform: rotate(12deg);
   }
 }
 
-#cf4a img:nth-of-type(1) {
+#divanim img:nth-of-type(1) {
   animation-delay: 0s;
 }
-#cf4a img:nth-of-type(2) {
+#divanim img:nth-of-type(2) {
   animation-delay: 0s;
 }
-#cf4a img:nth-of-type(3) {
+#divanim img:nth-of-type(3) {
   animation-delay: 0s;
 }
-#cf4a img:nth-of-type(4) {
+#divanim img:nth-of-type(4) {
   animation-delay: 0;
 }
 
@@ -166,11 +172,24 @@ transform: translate(50%,-50%);
          
          {}
 #towerimg {
-
-
+align-items:center;
+right: 50%;
+scale:(3);    
+transform: scale(4, 4);
+-ms-transform: scale(0.5, 0.5);
+-webkit-transform: scale(4, 4);
+object-fit: contain;
+}
+.center{
+display: block;
+margin-left: auto;
+margin-right: auto;
+width: 50%;
 
 
 }
+
+
          
          
          
