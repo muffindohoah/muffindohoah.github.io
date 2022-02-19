@@ -12,6 +12,9 @@
         </div>
 
 
+
+
+
 <div id="divanim">
         <img class="bottom" src="goober.png" style="width: 370px; height: 200px; -webkit-transform: translate(75px, 30px);"/>
 
@@ -34,18 +37,32 @@ https://jsbin.com/fegovujufo/edit?html,js,console,output
 <img src="tower2.png" style="width: auto; margin-left: auto;, margin-right: auto;" class="center">
 </div>
 
+<div id="window">
+  <p>the only thing between life and death</p>
+  <p>interestingly enough, it's surprisingly fragile</p>
+ <a href="space.html"><img src="pane.png" style="right: 50%;"></a>
+</div>
 
 
-
-
-
-</body>
 
 
 
 
 
 <style>    
+#window {
+        background-image:url("black.png");
+        border: 2px outset rgb(255, 255, 255);
+         background-color: rgb(14, 15, 34);    
+         text-align: center;
+         max-width: 1000px; 
+         max-height: 2000px;
+         margin: auto;
+         font-family: MS Gothic;
+         color: white;
+         word-wrap: normal;
+         font-size: 15px;
+}
 
         #header {
         border: 2px outset rgb(99, 64, 119);
@@ -96,7 +113,7 @@ color-interpolation-filters: linearRGB;
          font-size: 12px;
          color: white;
          }
-         body {
+         body  {
 background-color: aliceblue;
 font-family: 'Franklin Gothic Medium', 'Arial Narrow';
 font-size: 22pt;
@@ -190,6 +207,56 @@ width: 50%;
 
 
 }
+
+
+<style>
+:root {
+  --base:              #000000;
+  --bg-blend:          hard-light;
+  --blur:              2px;
+  --fg-blend:          color-burn;
+  --foreground:        #b3bce3;
+  --opacity:           1;
+  --spacing:           0px;
+}
+.img-wrapper {
+  background-color:    var(--base);
+  display:             flex;
+  flex:                1 1 100%;
+  height:              100%;
+  overflow:            hidden;
+  padding:             var(--spacing);
+  position:            relative;
+}
+
+.img-wrapper img {
+  filter:              grayscale(100%) contrast(1) blur(var(--blur));
+  flex:                1 0 100%;
+  height:              100%;
+  max-width:           100%;
+  mix-blend-mode:      var(--bg-blend);
+  object-fit:          cover;
+  opacity:             var(--opacity);
+  position:            relative;
+  width:               100%;
+}
+
+.img-wrapper::before {
+  background-color:    var(--foreground);
+  bottom:              0;
+  content:             '';
+  height:              100%;
+  left:                0;
+  mix-blend-mode:      var(--fg-blend);
+  position:            absolute;
+  right:               0;
+  top:                 0;
+  width:               100%;
+  z-index:             1;
+}
+
+</style>
+</div>
 
 
          
