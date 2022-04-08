@@ -172,13 +172,13 @@ function ball() {
         bX = bX - 1;
         bY = bY - 1;
         velX = -velX
-        velY = velY + getRandomInt(-2, 2)
+        velY = velY + (getRandomInt(-200.0, 200.0) / 100)
     }
     else if (bX <= 50 && bY <= p1Y + 80 && bY >= p1Y) {
         bX = bX + 1;
         bY = bY + 1;
         velX = -velX;
-        velY = velY + getRandomInt(-2, 2)
+        velY = velY + (getRandomInt(-200.0, 200.0) / 100)
     };
 
 };
