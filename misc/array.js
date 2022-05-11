@@ -79,7 +79,7 @@ function clear() {
 
 function draw(item, text, tX, tY) {
     if (item = "text") {
-        var c = document.getElementById("CanvasTest");
+        var c = document.getElementById("Dialogue");
         var ctx = c.getContext("2d");
         ctx.font = "60px MSGothic";
         ctx.strokeText(text, tX, tY);
