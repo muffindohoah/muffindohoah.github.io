@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Bouncing Box</title>
+	<script src="jquery.min.js"></script>
+	<style>
+ 		.header {
+        border: 2px outset rgb(255, 255, 255);
+         background-color: rgb(0, 0, 0);    
+         text-align: center;
+         max-width: 400px; 
+         margin: auto;
+         font-family: Helvetica;
+         color: white;
+         word-wrap: normal;
+		 }
+		.divcenter {
+        border: 2px outset rgb(255, 255, 255);
+         background-color: rgb(0, 0, 0);    
+         text-align: center;
+         max-width: 1000px; 
+         margin: auto;
+         font-family: Verdana;
+         color: white;
+         word-wrap: normal;
+         font-size: 15px;
+		color-interpolation-filters: linearRGB;
+         }
+		body{
+
+			background-color: black;);
+		}
+
+		.box {
+			width: 120px;
+			height: 70px;
+			font-size: 300%;
+			text-align: center;
+			;
+			display: block;
+			position: absolute;
+			top: 100px;
+			left: 248px;
+			/* <--- Change me! */ 
+		}
+	</style>
+	<!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+
+</head>
+
+<body class="board">
+	<!-- HTML for the box -->
+	<div class="box"><img src="http://www.catholicmass.org/wp-content/uploads/2020/07/dvd-white.png" style="transform: scale(0.35) translate(-740px, -740px);"></div>
+
+	<script>
+		(function () {
+			'use strict'
+			/* global jQuery */
+
+			//////////////////////////////////////////////////////////////////
+			/////////////////// SETUP DO NOT DELETE //////////////////////////
+			//////////////////////////////////////////////////////////////////
+
+			var box = jQuery('.box');	// reference to the HTML .box element
+			var board = jQuery('.board');	// reference to the HTML .board element
+			var boardWidth = board.width();	// the maximum X-Coordinate of the screen
+			var boardHeight = board.innerHeight();
+			console.log(boardWidth + ", " + boardHeight)
+
+			// Every 50 milliseconds, call the update Function (see below)
+			setInterval(update, 1);
+
+			// Every time the box is clicked, call the handleBoxClick Function (see below)
+			box.on('click', handleBoxClick);
+
+			// moves the Box to a new position on the screen along the X-Axis
+			function moveBoxTo(newPositionX, newPositionY) {
+				box.css("left", newPositionX);
+				box.css("top", newPositionY);
+			}
+
+			// changes the text displayed on the Box
+			function changeBoxText(newText) {
+				//box.text(newText);
+			}
+
+			//////////////////////////////////////////////////////////////////
+			/////////////////// YOUR CODE BELOW HERE /////////////////////////
+			//////////////////////////////////////////////////////////////////
+
+			// TODO 2 - Variable declarations 
+			function getRandomInt(min, max) {
+				min = Math.ceil(min);
+				max = Math.floor(max);
+				return Math.floor(Math.random() * (max - min) + min);
+			}
+
+			var positionX = 10;
+			var positionY = 10;
+			var points = 0;
+			var velX = getRandomInt(1, 1);
+			var velY = getRandomInt(1, 1);
+
+			//The maximum is exclusive and the minimum is inclusive
+			/* 
+			This Function will be called 20 times/second. Each time it is called,
+			it should move the Box to a new location. If the box drifts off the screen
+			turn it around! 
+			*/
+			function bounce() {
+				var rngbool = getRandomInt(1, 2);
+				console.log(rngbool)
+				if (rngbool === 1) {
+					velX = -velX;
+					//velY = vely + getRandomInt(1, 3)
+					console.log(rngbool)
+
+				} else {
+					velX = -velX;
+					//velY = velY + getRandomInt(-1, -3)
+					console.log(rngbool)
+				}
+			};
+
+			function ybounce() {
+				var rngbool = getRandomInt(1, 2);
+				if (rngbool === 1) {
+					velY = -velY;
+					console.log(rngbool)
+
+				} else {
+					velY = -velY;
+					console.log(rngbool)
+				}
+
+			}
+
+			function update() {
+				positionX = positionX + velX
+				positionY = positionY + velY
+				moveBoxTo(positionX, positionY);
+				
+				if (positionX > boardWidth - 70) {
+					bounce();
+
+				}
+				if (positionY > 950) {
+					ybounce();
+					console.log(boardHeight)
+
+				}
+				if (positionX < 0) {
+					bounce();
+
+				}
+				if (positionY < 0) {
+					ybounce();
+
+				}
+				boardWidth = board.width();
+				boardHeight = board.height();
+
+			};
+
+
+
+			/* 
+			This Function will be called each time the box is clicked. Each time it is called,
+			it should increase the points total, increase the velX, and move the box to
+			the left side of the screen.
+			*/
+			function handleBoxClick() {
+				
+
+				changeBoxText(points);
+				if (velX > 0) {
+					velX = velX + 3;
+					velY = velY + 3;
+				} else if (velX < 0) {
+					velX = velX - 3;
+				}
+			};
+		})();
+	</script>
+	<div class="header"><p>II</p><p>II</p><p>II</p><p>V</p></div>
+	<div class="divcenter"><img src="https://c.tenor.com/C4A851OTHp0AAAAC/vhs-glitch.gif"></div>
+</body>
+
+</html>
