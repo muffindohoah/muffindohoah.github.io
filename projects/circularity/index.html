@@ -1,49 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Circulatory Circularity Circulation</title>
-    <script src="jquery.min.js"></script>
-    <script defer type="text/javascript" src="init.js"></script>
-</head>
+<html>
+    <head>
+        <meta charset="utf-8">
 
+        <title>fine i give up ugh</title>
+        <meta name="description" content="i give up lol ill just copy">
+        <meta name="author" content="operationspark.org">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="css/style.css" rel="stylesheet">
 
-<body>
-    <div src="dt">
-        <p id="dt"></p>
-    </div>
-    <canvas id="CanvasTest" width="480" height="360" style="scroll:50% 50%; border:4px solid #000000;"></canvas>
-</body>
-<script>
-</script>
+        <!-- all core CreateJS and 3rd party libraries are listed here: -->
+        <script src="bower_components/lodash/lodash.min.js"></script>
+        <script src="bower_components/easeljs/lib/easeljs-0.8.2.min.js"></script>
+        <script src="bower_components/opspark-draw/draw.js"></script>
+        <script src="bower_components/racket/racket.js"></script>
 
-<style>
-    #dt {
-        color: rgb(0, 0, 0);
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
-    }
+        <!-- our app javascript code -->
+        <script src="js/opspark.js"></script>
+        <script src="js/init.js"></script>
+        
+        <style type="text/css">
+            /*override default styles here*/
+        </style>
+    </head>
+    <body>
+        <div>
+            <canvas id="canvas" width="500" height="500"></canvas>
+        </div>
+        <script id="motion-poem">
+            (function(){
+                init(window);
+                window.opspark.makeGame();
+            })();
+        </script>
+    </body>
 
-    body {
-
-
-
-        background-image: url('index.png');
-    }
-
-    canvas {
-        padding: 0;
-        margin: auto;
-        display: block;
-        width: 800px;
-        height: 600px;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background-color: rgb(255, 255, 255);
-    }
-</style>
+</html>
