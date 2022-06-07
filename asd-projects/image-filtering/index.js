@@ -17,9 +17,12 @@ $(document).ready(function(){
 /////////////////////////////////////////////////////////
 
 // TODO 1, 2 & 4: Create the applyFilter function here
+function applyFilter() {
 
+};
 
 // TODO 7: Create the applyFilterNoBackground function
+
 
 
 // TODO 5: Create the keepInBounds function
