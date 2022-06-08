@@ -13,15 +13,28 @@ function runProgram() {
 
   // Game Item Objects
 
+  var inputMap = {
+    a: 38,
+    b: 37,    //p1 controls.
+    c: 39,
+    d: 40,
+
+    e: null,
+    f: null,    //p2 controls.
+    g: null,
+    h: null
+  }
+
+  var player = { x: 0, y: 0 }
   var velocity = { x: 0, y: 0 }
   var inputVelocity = { x: 0, y: 0 }
 
-const SPEED = 40
+  const SPEED = 4
 
   // one-time setup
   var interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);   // execute newFrame every 0.0166 seconds (60 Frames per second)
   $(document).on('keydown', handleEvent);                           // change 'eventType' to the type of event you want to handle
-$(document).on('keyup', handleEvent); 
+  $(document).on('keyup', handleEvent);
 
   ////////////////////////////////////////////////////////////////////////////////
   ///////////////////////// CORE LOGIC ///////////////////////////////////////////
@@ -33,22 +46,39 @@ $(document).on('keyup', handleEvent);
   */
   function newFrame() {
 
-    input()
+    //input()
+    varUpdate()
     moveAndSlide(velocity)
 
-  
+
   }
 
-  function input() {
+  function varUpdate() {
 
     velocity.x = inputVelocity.x * SPEED
     velocity.y = inputVelocity.y * SPEED
 
+
   };
 
   function moveAndSlide(object) {
-    $("gameItem").css('right', object.x)
-    $("gameItem").css('up', object.y)
+
+    var $box = $("#box")
+    console.log($box)
+
+
+    player.x += object.x;
+    player.y += object.y;
+
+    //$("gameItem").offset({ top: player.y, left: player.x });
+
+    // console.log($("gameItem").offset())
+
+    $("#gameItem").css("left", player.x)
+    $("#gameItem").css("top", player.y)
+
+    console.log(player.y)
+
 
 
   }
@@ -58,22 +88,36 @@ $(document).on('keyup', handleEvent);
   */
   function handleEvent(event) {
 
-    inputVelocity.y = 0
-    inputVelocity.x = 0
+    if (event.type === 'keydown') {
 
-    if (event.which === 38) {
-      inputVelocity.y += 1
-    } else if (event.which === 37) {
-      inputVelocity.x += 1
-    } else if (event.which === 39) {
-      inputVelocity.x -= 1
-    } else if (event.which === 40) {
-      inputVelocity.y -= 1
-    };
 
-console.log(inputVelocity)
 
-input()
+      if (event.which === inputMap.a) {
+        inputVelocity.y = -1
+        console.log(inputVelocity)
+      } else if (event.which === inputMap.b) {
+        inputVelocity.x = -1
+      } else if (event.which === inputMap.c) {
+        inputVelocity.x = 1
+      } else if (event.which === inputMap.d) {
+        inputVelocity.y = 1
+      };
+
+    }
+    if (event.type === 'keyup') {
+      if (event.which === inputMap.a) {
+        inputVelocity.y = 0
+      } else if (event.which === inputMap.b) {
+        inputVelocity.x = 0
+      } else if (event.which === inputMap.c) {
+        inputVelocity.x = 0
+      } else if (event.which === inputMap.d) {
+        inputVelocity.y = 0
+      };
+    }
+
+    console.log(inputVelocity)
+
 
   }
 

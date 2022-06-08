@@ -1,24 +1,41 @@
 <html>
+
 <body>
-        <div id="header"><a href="index.html"><nav><img src=""></nav></a></div>
+  <div id="header"><a href="index.html">
+      <nav><img src=""></nav>
+    </a></div>
 
 
 
-        <div id="divcenter"> <p>OP Spark Projects</p>
-          <p></p>
-          <a href="asd-projects/debugging-exercise/index.html" style="color:azure"><p>debugging-exercise</p></a>
-        <a href="misc/pong.html" style="color:azure"><p>pong</p></a>
-        <a href="asd-projects/snakes/index.html" style="color:azure"><p>snake</p></a>
-        <a href="asd-projects/snakes/dice.html" style="color:azure"><p>magic dice roller</p></a>
-        <a href="asd-projects/image-filtering/index.html" style="color:azure"><p>image</p></a>
-        </div>
+  <div id="divcenter">
+    <p>OP Spark Projects</p>
+    <p></p>
+    <a href="asd-projects/debugging-exercise/index.html" style="color:azure">
+      <p>debugging-exercise</p>
+    </a>
+    <a href="misc/pong.html" style="color:azure">
+      <p>pong</p>
+    </a>
+    <a href="asd-projects/snakes/index.html" style="color:azure">
+      <p>snake</p>
+    </a>
+    <a href="asd-projects/snakes/dice.html" style="color:azure">
+      <p>magic dice roller</p>
+    </a>
+    <a href="asd-projects/walker/index.html" style="color:azure">
+      <p>walker (ugh)</p>
+    </a>
+    <a href="asd-projects/image-filtering/index.html" style="color:azure">
+      <p>image</p>
+    </a>
+  </div>
 
 
 
 
 
 
-<!--
+  <!--
 <ul class="blocks">
         <li class="block"><img src="block1.png">
         </li>
@@ -31,10 +48,10 @@
 https://jsbin.com/fegovujufo/edit?html,js,console,output
 
 -->
-<div id="towerimg">
-<img src="img/tower2.png" style="width: auto; margin-left: auto;, margin-right: auto;" class="center">
-</div>
-<!--
+  <div id="towerimg">
+    <img src="img/tower2.png" style="width: auto; margin-left: auto;, margin-right: auto;" class="center">
+  </div>
+  <!--
 <div id="window">
   <p>the only thing between you and death</p>
   <p>interestingly enough, it's surprisingly fragile</p>
@@ -47,222 +64,265 @@ https://jsbin.com/fegovujufo/edit?html,js,console,output
 
 
 
-<style>    
-#window {
-        background-image:url("black.png");
-        border: 2px outset rgb(255, 255, 255);
-         background-color: rgb(14, 15, 34);    
-         text-align: center;
-         max-width: 1000px; 
-         max-height: 2000px;
-         margin: auto;
-         font-family: MS Gothic;
-         color: white;
-         word-wrap: normal;
-         font-size: 15px;
-         margin-bottom: 20px;
-}
+  <style>
+    #window {
+      background-image: url("black.png");
+      border: 2px outset rgb(255, 255, 255);
+      background-color: rgb(14, 15, 34);
+      text-align: center;
+      max-width: 1000px;
+      max-height: 2000px;
+      margin: auto;
+      font-family: MS Gothic;
+      color: white;
+      word-wrap: normal;
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
 
-        #header {
-        border: 2px outset rgb(129, 37, 90);
-         background-color: rgb(14, 13, 24);    
-         text-align: center;
-         max-width: 400px; 
-         margin: auto;
-         font-family: Helvetica;
-         color: white;
-         word-wrap: normal;
+    #header {
+      border: 2px outset rgb(129, 37, 90);
+      background-color: rgb(14, 13, 24);
+      text-align: center;
+      max-width: 400px;
+      margin: auto;
+      font-family: Helvetica;
+      color: white;
+      word-wrap: normal;
 
-        margin-bottom:50px
-        }
-        #div {
-        border: 2px outset rgb(129, 37, 90);
-         background-color: rgb(14, 13, 24);    
-         text-align: center;
-         max-width: 1000px; 
-         margin: auto;
-         font-family: Helvetica;
-         color: white;
-         word-wrap: normal;
-        }
-       #divcenter {
-        border: 2px outset rgb(129, 37, 90);
-         background-color: rgb(14, 13, 24);    
-         text-align: center;
-         max-width: 1000px; 
-         margin: auto;
-         font-family: Verdana;
-         color: white;
-         word-wrap: normal;
-         font-size: 15px;
-         -moz-transform: skew(0deg, -5deg);
--webkit-transform: skew(0deg, -5deg);
--o-transform: skew(0deg, -5deg);
--ms-transform: skew(0deg, -5deg);
-transform: skew(5deg, -3deg);
-color-interpolation-filters: linearRGB;
-         }
-         #divend {
-        border: 2px outset rgb(129, 37, 90);
-         background-color: rgb(14, 13, 24);    
-         text-align: center;
-         max-width: 1000px; 
-         margin: auto;
-         font-family: Helvetica;
-         font-size: 12px;
-         color: white;
-         }
-         body  {
-background-color: aliceblue;
-font-family: 'Franklin Gothic Medium', 'Arial Narrow';
-font-size: 22pt;
-background-image:url("img/duotone.png");
-}
-@keyframes test {
- 
-  0% { top: 0px; left: 0px; right: 0px;}
-  100% { top: 0px; left: 0px; right: 0px; transform: rotate(12deg);}
-}
-@keyframes littleguy {
-  0% {
-    opacity:1; top: 0px; left: 0px; right: 0px;
-  }
-  17% {
-    opacity:1; top: 0px; left: 0px; right: 0px; transform: rotate(3deg);
-  }
-  25% {
-    opacity:1; top: 0px; left: 0px; right: 0px; transform: rotate(6deg);
-  }
-  92% {
-    opacity:1; top: 0px; left: 0px; right: 0px; transform: rotate(9deg);
-  }
-  100% {
-    opacity:1; top: 0px; left: 0px; right: 0px; transform: rotate(12deg);
-  }
-}
+      margin-bottom: 50px
+    }
 
-#divanim img:nth-of-type(1) {
-  animation-delay: 0s;
-}
-#divanim img:nth-of-type(2) {
-  animation-delay: 0s;
-}
-#divanim img:nth-of-type(3) {
-  animation-delay: 0s;
-}
-#divanim img:nth-of-type(4) {
-  animation-delay: 0;
-}
+    #div {
+      border: 2px outset rgb(129, 37, 90);
+      background-color: rgb(14, 13, 24);
+      text-align: center;
+      max-width: 1000px;
+      margin: auto;
+      font-family: Helvetica;
+      color: white;
+      word-wrap: normal;
+    }
 
-.blocks {
-display:flex;
-flex-wrap: nowrap;
-flex-direction: column-reverse;
-flex-basis: min-content;
-align-items: flex-start;
-transform: scale(3);
-justify-content: space-between;
-}
+    #divcenter {
+      border: 2px outset rgb(129, 37, 90);
+      background-color: rgb(14, 13, 24);
+      text-align: center;
+      max-width: 1000px;
+      margin: auto;
+      font-family: Verdana;
+      color: white;
+      word-wrap: normal;
+      font-size: 15px;
+      -moz-transform: skew(0deg, -5deg);
+      -webkit-transform: skew(0deg, -5deg);
+      -o-transform: skew(0deg, -5deg);
+      -ms-transform: skew(0deg, -5deg);
+      transform: skew(5deg, -3deg);
+      color-interpolation-filters: linearRGB;
+    }
 
-.block {
-width: 100px;
-height: 0px;
-margin: center;
-align: center;
-position: absolute;
-right: 50%;
-transform: translate(50%,-50%);
-}
+    #divend {
+      border: 2px outset rgb(129, 37, 90);
+      background-color: rgb(14, 13, 24);
+      text-align: center;
+      max-width: 1000px;
+      margin: auto;
+      font-family: Helvetica;
+      font-size: 12px;
+      color: white;
+    }
 
+    body {
+      background-color: aliceblue;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow';
+      font-size: 22pt;
+      background-image: url("img/duotone.png");
+    }
 
-#divanim {
-         animation-name: littleguy;
-         position: relative;
-         animation-duration: 2s;
-         animation-delay: 0s;
-         animation-direction: alternate;
-         animation-iteration-count: infinite;
-         animation-timing-function: ease-in-out;
-         animation-fill-mode: forwards;
-         max-width: 1000px;
-         justify-content: center;
-         
-         
-         {}
-#towerimg {
-align-items:center;
-right: 50%;
-scale:(3);    
-transform: scale(4, 4);
--ms-transform: scale(0.5, 0.5);
--webkit-transform: scale(4, 4);
-object-fit: contain;
-}
-.center{
-display: block;
-margin-left: auto;
-margin-right: auto;
-width: 50%;
+    @keyframes test {
 
+      0% {
+        top: 0px;
+        left: 0px;
+        right: 0px;
+      }
 
-}
+      100% {
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        transform: rotate(12deg);
+      }
+    }
 
+    @keyframes littleguy {
+      0% {
+        opacity: 1;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+      }
 
-<style>
-:root {
-  --base:              #000000;
-  --bg-blend:          hard-light;
-  --blur:              2px;
-  --fg-blend:          color-burn;
-  --foreground:        #b3bce3;
-  --opacity:           1;
-  --spacing:           0px;
-}
-.img-wrapper {
-  background-color:    var(--base);
-  display:             flex;
-  flex:                1 1 100%;
-  height:              100%;
-  overflow:            hidden;
-  padding:             var(--spacing);
-  position:            relative;
-}
+      17% {
+        opacity: 1;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        transform: rotate(3deg);
+      }
 
-.img-wrapper img {
-  filter:              grayscale(100%) contrast(1) blur(var(--blur));
-  flex:                1 0 100%;
-  height:              100%;
-  max-width:           100%;
-  mix-blend-mode:      var(--bg-blend);
-  object-fit:          cover;
-  opacity:             var(--opacity);
-  position:            relative;
-  width:               100%;
-}
+      25% {
+        opacity: 1;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        transform: rotate(6deg);
+      }
 
-.img-wrapper::before {
-  background-color:    var(--foreground);
-  bottom:              0;
-  content:             '';
-  height:              100%;
-  left:                0;
-  mix-blend-mode:      var(--fg-blend);
-  position:            absolute;
-  right:               0;
-  top:                 0;
-  width:               100%;
-  z-index:             1;
-}
+      92% {
+        opacity: 1;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        transform: rotate(9deg);
+      }
 
-</style>
-</div>
+      100% {
+        opacity: 1;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        transform: rotate(12deg);
+      }
+    }
+
+    #divanim img:nth-of-type(1) {
+      animation-delay: 0s;
+    }
+
+    #divanim img:nth-of-type(2) {
+      animation-delay: 0s;
+    }
+
+    #divanim img:nth-of-type(3) {
+      animation-delay: 0s;
+    }
+
+    #divanim img:nth-of-type(4) {
+      animation-delay: 0;
+    }
+
+    .blocks {
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: column-reverse;
+      flex-basis: min-content;
+      align-items: flex-start;
+      transform: scale(3);
+      justify-content: space-between;
+    }
+
+    .block {
+      width: 100px;
+      height: 0px;
+      margin: center;
+      align: center;
+      position: absolute;
+      right: 50%;
+      transform: translate(50%, -50%);
+    }
 
 
-         
-         
-         
-         
-         </style>
+    #divanim {
+      animation-name: littleguy;
+      position: relative;
+      animation-duration: 2s;
+      animation-delay: 0s;
+      animation-direction: alternate;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+      animation-fill-mode: forwards;
+      max-width: 1000px;
+      justify-content: center;
 
-    
+
+        {}
+
+      #towerimg {
+        align-items: center;
+        right: 50%;
+        scale: (3);
+        transform: scale(4, 4);
+        -ms-transform: scale(0.5, 0.5);
+        -webkit-transform: scale(4, 4);
+        object-fit: contain;
+      }
+
+      .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+
+
+      }
+
+
+      <style>:root {
+        --base: #000000;
+        --bg-blend: hard-light;
+        --blur: 2px;
+        --fg-blend: color-burn;
+        --foreground: #b3bce3;
+        --opacity: 1;
+        --spacing: 0px;
+      }
+
+      .img-wrapper {
+        background-color: var(--base);
+        display: flex;
+        flex: 1 1 100%;
+        height: 100%;
+        overflow: hidden;
+        padding: var(--spacing);
+        position: relative;
+      }
+
+      .img-wrapper img {
+        filter: grayscale(100%) contrast(1) blur(var(--blur));
+        flex: 1 0 100%;
+        height: 100%;
+        max-width: 100%;
+        mix-blend-mode: var(--bg-blend);
+        object-fit: cover;
+        opacity: var(--opacity);
+        position: relative;
+        width: 100%;
+      }
+
+      .img-wrapper::before {
+        background-color: var(--foreground);
+        bottom: 0;
+        content: '';
+        height: 100%;
+        left: 0;
+        mix-blend-mode: var(--fg-blend);
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+      }
+  </style>
+  </div>
+
+
+
+
+
+
+  </style>
+
+
 </html>
