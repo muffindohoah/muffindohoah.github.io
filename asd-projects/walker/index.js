@@ -77,7 +77,6 @@ function runProgram() {
     $("#gameItem").css("left", player.x)
     $("#gameItem").css("top", player.y)
 
-    console.log(player.y)
 
 
 

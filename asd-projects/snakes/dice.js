@@ -34,7 +34,7 @@ $("#rollSubmit").on("click", rollProcess);
 function rollProcess() {
     console.log($("#rollCount").val())
     rollcount = $("#rollCount").val()
-    
+    sidedDie = $("#sidedDie").val()
 
     logRoll("==============")
     //for (var i = 0; i < rollcount; i++) {
@@ -53,10 +53,9 @@ function rollProcess() {
 
 function roll() {
     
-
     try {
         console.log("rolling")
-        var sidedDie = $("#sidedDie").val()
+        
         var result = randi(0, sidedDie) + 1
 
         i++
