@@ -54,6 +54,7 @@ function randi(min, max) {
 
 const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
 
+
 document.addEventListener('keydown', myKeyPress);
 
 function myKeyPress(e) {
