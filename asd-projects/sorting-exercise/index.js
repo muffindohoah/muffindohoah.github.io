@@ -15,24 +15,32 @@ The CSS ids you will work with are:
 
 // TODO 2: Implement bubbleSort
 
-console.log(bubbleSort([13, 4, 12, 20, 2, 6]))
+//console.log(bubbleSort([13, 4, 12, 20, 2, 6]))
 
 async function bubbleSort(array) {
-    var splice = array.splice()
-    for (var i = 0; i < splice.length - 1; i++) {
+    //var array = array.array()
+    for (var i = 0; i <= array.length - 1; i++) {
 
-        for (var k = 0; k < splice.length - 1; i++) {
+        for (var k = array.length - 1; k >= i + 1; k--) {
+            //console.log(array[k], array[k - 1])
 
-            if (splice[k] < splice[k - 1]) {
-                swap(splice[k], splice[k - 1])
+            if (array[k].value < array[k - 1].value) {
+
+                console.log(array[k], array[k - 1])
+
+                swap(k, k - 1, array)
+                
                 updateCounter(bubbleCounter);
+
                 await sleep();
+            
             }
 
         }
 
 
     }
+    //return array
 }
 
 
@@ -75,13 +83,50 @@ async function bubblesort(array) {
 
 }
 
+console.log(quicksort([12, 21, 51, 5, 2, 61]))
 
 
-// TODO 3: Implement quickSort
+
+function quicksort(array) {
+
+var Arr = array
+var currentIndex = 0
+
+for (var i = 0; i < Arr.length; i++) {
+    
+    //console.log(Arr)
+    
+    for (var j = 0; j < Arr.length - i; j++) {
+        
+        var comparative = Arr[currentIndex]
+
+        console.log(Arr[currentIndex], Arr[i + j], Arr[currentIndex] > Arr[i + j])
+        
+        if (Arr[currentIndex] > Arr[i + j]) {
+            
+            swap(currentIndex, i+j, Arr)
+            
+            console.log("swap")
+        }
+
+    }
+    currentIndex++
+}
+
+
+return Arr
+
+}
+
 
 
 // TODOs 4 & 5: Implement partition
 
+function partition(array) {
+
+//for ()
+
+};
 
 // TODO 1: Implement swap
 
