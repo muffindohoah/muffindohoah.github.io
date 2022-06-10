@@ -14,15 +14,15 @@ function runProgram() {
   // Game Item Objects
 
   var inputMap = {
-    a: 38,
-    b: 37,    //p1 controls.
-    c: 39,
-    d: 40,
+    UP1: 38,
+    RIGHT1: 37,    //p1 controls.
+    LEFT1: 39,
+    DOWN1: 40,
 
-    e: null,
-    f: null,    //p2 controls.
-    g: null,
-    h: null
+    UP2: null,
+    RIGHT2: null,    //p2 controls.
+    LEFT2: null,
+    DOWN2: null
   }
 
   var player = { x: 0, y: 0 }
@@ -91,26 +91,26 @@ function runProgram() {
 
 
 
-      if (event.which === inputMap.a) {
+      if (event.which === inputMap.UP1) {
         inputVelocity.y = -1
         console.log(inputVelocity)
-      } else if (event.which === inputMap.b) {
+      } else if (event.which === inputMap.RIGHT1) {
         inputVelocity.x = -1
-      } else if (event.which === inputMap.c) {
+      } else if (event.which === inputMap.LEFT1) {
         inputVelocity.x = 1
-      } else if (event.which === inputMap.d) {
+      } else if (event.which === inputMap.DOWN1) {
         inputVelocity.y = 1
       };
 
     }
     if (event.type === 'keyup') {
-      if (event.which === inputMap.a) {
+      if (event.which === inputMap.UP1) {
         inputVelocity.y = 0
-      } else if (event.which === inputMap.b) {
+      } else if (event.which === inputMap.RIGHT1) {
         inputVelocity.x = 0
-      } else if (event.which === inputMap.c) {
+      } else if (event.which === inputMap.LEFT1) {
         inputVelocity.x = 0
-      } else if (event.which === inputMap.d) {
+      } else if (event.which === inputMap.DOWN1) {
         inputVelocity.y = 0
       };
     }

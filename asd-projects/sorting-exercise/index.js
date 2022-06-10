@@ -15,30 +15,63 @@ The CSS ids you will work with are:
 
 // TODO 2: Implement bubbleSort
 
-console.log(bubbleSort([9, 4, 12, 20, 2, 4]))
+console.log(bubbleSort([13, 4, 12, 20, 2, 6]))
 
-function bubbleSort(array) {
+async function bubbleSort(array) {
+    var splice = array.splice()
+    for (var i = 0; i < splice.length - 1; i++) {
+
+        for (var k = 0; k < splice.length - 1; i++) {
+
+            if (splice[k] < splice[k - 1]) {
+                swap(splice[k], splice[k - 1])
+                updateCounter(bubbleCounter);
+                await sleep();
+            }
+
+        }
+
+
+    }
+}
+
+
+
+
+
+async function bubblesort(array) {
 
     var spliceArray = array.splice()
     var tempSort = []
+    var bubbleSort = []
     var lowestValue = [100, 0]
 
-    for (var i = 0; i < array.length; i++) {
+    for (var m = 0; m < array.length; m++) {
 
-        if (array[i] < lowestValue[0]) {
+        for (var i = 0; i < array.length; i++) {
 
-            lowestValue = [array[i], i]
-            spliceArray.slice(lowestValue[1], 1)
-            tempSort.push(lowestValue[0])
-            console.log(spliceArray)
+            if (array[i] < lowestValue[0]) {
+
+                lowestValue = [array[i], i]
+                spliceArray.slice(lowestValue[1], 1)
+                tempSort.push(lowestValue[0])
+                //console.log(spliceArray)
+
+                //await sleep();
+
+            };
+
+            console.log(i)
+            //console.log(lowestValue)
 
         };
-
-        console.log(lowestValue)
+        bubbleSort.push(lowestValue[0])
+        array.slice(tempSort.indexOf(lowestValue[0], 1), 1)
+        console.log(m + "a")
 
     };
 
-    return tempSort
+    return bubbleSort
 
 }
 
@@ -54,9 +87,11 @@ function bubbleSort(array) {
 
 
 function swap(l, j, array) {
-    var temp = array[l].splice()
+    var temp = array[l]
 
+    array[l] = array[j]
     array[j] = temp
+
 
 }
 
