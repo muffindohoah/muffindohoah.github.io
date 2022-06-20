@@ -7,11 +7,11 @@ $(document).ready(function(){
         if (!STARTED){
             STARTED = true;
 
-            if (bubbleSort){
-                bubbleSort(bubbleList);
+            if (quicksortb){
+                quicksortb(bubbleList);
             }
-            if (quickSort){
-                quickSort(quickList, 0, quickList.length-1);
+            if (quicksort){
+                quicksort(quickList, 0, quickList.length-1);
             }
         }
     })

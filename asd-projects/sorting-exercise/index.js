@@ -18,29 +18,30 @@ The CSS ids you will work with are:
 //console.log(bubbleSort([13, 4, 12, 20, 2, 6]))
 
 async function bubbleSort(array) {
-    //var array = array.array()
-    for (var i = 0; i <= array.length - 1; i++) {
 
-        for (var k = array.length - 1; k >= i + 1; k--) {
-            //console.log(array[k], array[k - 1])
+    var Arr = array
+    var currentIndex = 0
 
-            if (array[k].value < array[k - 1].value) {
+    for (var i = 0; i < Arr.length; i++) {
 
-                console.log(array[k], array[k - 1])
+        //console.log(Arr)
 
-                swap(k, k - 1, array)
-                
-                updateCounter(bubbleCounter);
+        for (var j = 0; j < Arr.length - i; j++) {
 
-                await sleep();
-            
+            //var comparative = Arr[currentIndex]
+
+            //console.log(Arr[currentIndex], Arr[i + j], Arr[currentIndex] > Arr[i + j])
+
+            if (Arr[currentIndex] > Arr[i + 1]) {
+
+                swap(i + 1, currentIndex, Arr)
+
+                console.log("swap")
             }
 
         }
-
-
+        currentIndex++
     }
-    //return array
 }
 
 
@@ -83,48 +84,77 @@ async function bubblesort(array) {
 
 }
 
-console.log(quicksort([12, 21, 51, 5, 2, 61]))
+console.log(quicksort([12, 21, 51, 5, 2, 61, 9, 19, 4, 222]))
 
 
 
 function quicksort(array) {
 
-var Arr = array
-var currentIndex = 0
+    var Arr = array
+    var currentIndex = 0
 
-for (var i = 0; i < Arr.length; i++) {
-    
-    //console.log(Arr)
-    
-    for (var j = 0; j < Arr.length - i; j++) {
-        
-        var comparative = Arr[currentIndex]
+    for (var i = 0; i < Arr.length; i++) {
 
-        console.log(Arr[currentIndex], Arr[i + j], Arr[currentIndex] > Arr[i + j])
-        
-        if (Arr[currentIndex] > Arr[i + j]) {
-            
-            swap(currentIndex, i+j, Arr)
-            
-            console.log("swap")
+        //console.log(Arr)
+
+        for (var j = 0; j < Arr.length - i; j++) {
+
+            var comparative = Arr[currentIndex]
+
+            console.log(Arr[currentIndex], Arr[i + j], Arr[currentIndex] > Arr[i + j])
+
+            if (Arr[currentIndex] > Arr[i + j]) {
+
+                swap(currentIndex, i + j, Arr)
+
+                console.log("swap")
+            }
+
         }
-
+        currentIndex++
     }
-    currentIndex++
 }
 
+async function quicksortb(array) {
 
-return Arr
+    var Arr = array
+    var currentIndex = 0
+
+    for (var i = 0; i < Arr.length; i++) {
+
+        //console.log(Arr)
+
+        for (var j = 0; j < Arr.length - i; j++) {
+
+            //var comparative = Arr[currentIndex]
+
+            //console.log(Arr[currentIndex], Arr[i + j], Arr[currentIndex] > Arr[i + j])
+
+            if (Arr[currentIndex] > Arr[i + 1]) {
+
+                swap(i + 1, currentIndex, Arr)
+                updateCounter(bubbleCounter)
+                await sleep()
+
+                //console.log("swap")
+            }
+
+        }
+        currentIndex++
+    }
+
+    return Arr
 
 }
 
+//console.log(quicksortb([12, 2, 5, 7, 19]))
 
 
 // TODOs 4 & 5: Implement partition
 
 function partition(array) {
 
-//for ()
+    //for ()
 
 };
 
@@ -136,6 +166,7 @@ function swap(l, j, array) {
 
     array[l] = array[j]
     array[j] = temp
+    drawSwap(array, l, j)
 
 
 }
