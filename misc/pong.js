@@ -1,9 +1,13 @@
 
 // Player Setup
-var p1Y = 150;
-var p2Y = 150;
-var p1S = 0;
-var p2S = 0;
+
+var p1 = {p1S: 0, p1Y: 150}
+var p2 = {p2S: 0, p2Y: 150}
+
+//var p1Y = 150;
+//var p2Y = 150;
+//var p1.p1S = 0;
+//var p2.p2S = 0;
 
 var bX = 240;
 var bY = 180;
@@ -47,11 +51,11 @@ function myKeyPress(e) {
 
 
 function stamp() {
-    rect(20, p1Y, 20, 80);
-    rect(430, p2Y, 20, 80);
+    rect(20, p1.p1Y, 20, 80);
+    rect(430, p2.p2Y, 20, 80);
     elipses(bX, bY, 1);
-    draw(p1S, 30, 30, 30)
-    draw(p2S, 420, 30, 30)
+    draw(p1.p1S, 30, 30, 30)
+    draw(p2.p2S, 420, 30, 30)
 };
 
 
@@ -61,40 +65,40 @@ function getpress() {
         map[e.keyCode] = e.type == 'keydown';
     }
     if (map[38] && map[87]) { //both players press up
-        p1Y = p1Y - (1 * spd)
-        p2Y = p2Y - (1 * spd)
+        p1.p1Y = p1.p1Y - (1 * spd)
+        p2.p2Y = p2.p2Y - (1 * spd)
     } else if (map[40] && map[83]) { // both players press down
-        p1Y = p1Y + (1 * spd)
-        p2Y = p2Y + (1 * spd)
+        p1.p1Y = p1.p1Y + (1 * spd)
+        p2.p2Y = p2.p2Y + (1 * spd)
     } else if (map[38] && map[83]) { // p1 down, p2 up
-        p1Y = p1Y + (1 * spd)
-        p2Y = p2Y - (1 * spd)
+        p1.p1Y = p1.p1Y + (1 * spd)
+        p2.p2Y = p2.p2Y - (1 * spd)
     } else if (map[40] && map[87]) { // p1 up, p2 down
-        p1Y = p1Y - (1 * spd)
-        p2Y = p2Y + (1 * spd)
+        p1.p1Y = p1.p1Y - (1 * spd)
+        p2.p2Y = p2.p2Y + (1 * spd)
     } else if (map[87]) { //p1up
-        p1Y = p1Y - (1 * spd)
+        p1.p1Y = p1.p1Y - (1 * spd)
     } else if (map[83]) { //p1down
-        p1Y = p1Y + (1 * spd)
+        p1.p1Y = p1.p1Y + (1 * spd)
     } else if (map[38]) { //p2up
-        p2Y = p2Y - (1 * spd)
+        p2.p2Y = p2.p2Y - (1 * spd)
     } else if (map[40]) { //p2down
-        p2Y = p2Y + (1 * spd)
+        p2.p2Y = p2.p2Y + (1 * spd)
     };
 
 
-    if (p1Y > 280) {
-        p1Y = 280
+    if (p1.p1Y > 280) {
+        p1.p1Y = 280
     };
-    if (p2Y > 280) {
-        p2Y = 280
+    if (p2.p2Y > 280) {
+        p2.p2Y = 280
     };
 
-    if (p1Y < 0) {
-        p1Y = 0
+    if (p1.p1Y < 0) {
+        p1.p1Y = 0
     };
-    if (p2Y < 0) {
-        p2Y = 0
+    if (p2.p2Y < 0) {
+        p2.p2Y = 0
     };
 
 };
@@ -132,7 +136,7 @@ setInterval(diff, 1000)
 
 //ETC.
 
-//p1y, p1y+80, (p1x)20, (p2x)430
+//p1.p1Y, p1.p1Y+80, (p1x)20, (p2x)430
 
 function reset(point) {
     spd = 1
@@ -141,10 +145,10 @@ function reset(point) {
     velX = 1
     velY = 0
     if (point === 1) {
-        p1S += 1
+        p1.p1S += 1
     }
     if (point === 2) {
-        p2S += 1
+        p2.p2S += 1
     };
 };
 
@@ -168,13 +172,13 @@ function ball() {
     else if (bY < 0) {
         velY = -velY;
     }
-    else if (bX + 12 >= 430 && bY <= p2Y + 80 && bY >= p2Y) {
+    else if (bX + 12 >= 430 && bY <= p2.p2Y + 80 && bY >= p2.p2Y) {
         bX = bX - 1;
         bY = bY - 1;
         velX = -velX
         velY = velY + (getRandomInt(-200.0, 200.0) / 100)
     }
-    else if (bX <= 50 && bY <= p1Y + 80 && bY >= p1Y) {
+    else if (bX <= 50 && bY <= p1.p1Y + 80 && bY >= p1.p1Y) {
         bX = bX + 1;
         bY = bY + 1;
         velX = -velX;
@@ -195,12 +199,12 @@ function ball() {
 //   if (bX === 20 || bX === 430) { //check collision
 
 //     for (let i = 0; i < 80; i++) {
-//       if (bY === p1Y + i) {
+//       if (bY === p1.p1Y + i) {
 //         velX = 1
 //velY = getRandomInt(1, -1)
 
 //   };
-// if (bY === p2Y + i) {
+// if (bY === p2.p2Y + i) {
 //   velX = -1
 //velY = getRandomInt(1, -1)
 
