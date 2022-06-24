@@ -113,6 +113,7 @@ function quicksort(array) {
         }
         currentIndex++
     }
+    return Arr
 }
 
 async function quicksortb(array) {
@@ -152,12 +153,31 @@ async function quicksortb(array) {
 
 // TODOs 4 & 5: Implement partition
 
-function partition(array) {
+function recursive(array, array2) {
+    var Arr = quicksort(array)
+    var Arr2 = quicksort(array2)
+    var Result = []
 
-    //for ()
+    console.log(Arr, Arr2, Result)
 
-};
+    for (var i = 0; i < Arr2.length + Arr.length; i++) {
+        console.log("is this awake")
+        if (Arr[0] > Arr2[0]) {
+            Result.push(Arr2)
+            Arr2.remove(0)
+            console.log("hit")
+        } else {
+            Result.push(Arr)
+            Arr.remove(0)
+            console.log("not hit")
+        }
 
+
+    
+    };
+    return Result
+}
+console.log(recursive([1, 9, 5], [5, 9, 3]))
 // TODO 1: Implement swap
 
 
