@@ -84,7 +84,7 @@ async function bubblesort(array) {
 
 }
 
-console.log(quicksort([12, 21, 51, 5, 2, 61, 9, 19, 4, 222]))
+//console.log(quicksort([12, 21, 51, 5, 2, 61, 9, 19, 4, 222]))
 
 
 
@@ -153,31 +153,93 @@ async function quicksortb(array) {
 
 // TODOs 4 & 5: Implement partition
 
-function recursive(array, array2) {
+function uses() {
+    merge([], [])
+}
+
+console.log(mergesort([1, 12, 5, 3, 7, 12]))
+
+function mergesort(array) {
+
+    var Arr = array
+
+    if (Arr.length % 4 != 0) {
+        
+    }
+
+    var length = Arr.length
+
+    var Pieces = []
+
+    var Result = []
+
+
+
+    for (var i = 0; i < length; i++) {
+        console.log("iteration")
+
+        var pieceCache = []
+        if (Arr[1] > Arr[0]) {
+            pieceCache.push(Arr[0], Arr[1])
+        } else {
+            pieceCache.push(Arr[1], Arr[0])
+        }
+
+        Pieces.push(pieceCache)
+
+        pieceCache = []
+        if (Arr[2] > Arr[3]) {
+            pieceCache.push(Arr[3], Arr[2])
+        } else {
+            pieceCache.push(Arr[2], Arr[3])
+        }
+        Pieces.push(pieceCache)
+
+        Pieces = merge(Pieces[0], Pieces[1])
+        Result.push(Pieces)
+        Pieces = []
+        for (var i = 0; i <= 4; i++) {
+        Arr.shift()
+        }
+
+    }
+
+    console.log("over!")
+    return Result
+}
+
+function merge(array, array2) {
     var Arr = quicksort(array)
     var Arr2 = quicksort(array2)
     var Result = []
 
-    console.log(Arr, Arr2, Result)
+   // console.log(Arr, Arr2, Result)
 
-    for (var i = 0; i < Arr2.length + Arr.length; i++) {
-        console.log("is this awake")
+    var length = Arr2.length + Arr.length
+
+    for (var i = 0; i < length; i++) {
+        //console.log("iterate")
         if (Arr[0] > Arr2[0]) {
-            Result.push(Arr2)
-            Arr2.remove(0)
-            console.log("hit")
+            Result.push(Arr2[0])
+            Arr2.shift()
+            //console.log("Arr")
+        } else if (Arr[0]) {
+            Result.push(Arr[0])
+            Arr.shift()
+            //console.log("Arr2")
         } else {
-            Result.push(Arr)
-            Arr.remove(0)
-            console.log("not hit")
+
+            Result.push(...Arr2)
         }
 
 
-    
+
     };
     return Result
 }
-console.log(recursive([1, 9, 5], [5, 9, 3]))
+
+
+//console.log(recursive([1, 5, 9, 12], [3, 5, 9, 15, 11]))
 // TODO 1: Implement swap
 
 
