@@ -157,55 +157,25 @@ function uses() {
     merge([], [])
 }
 
-console.log(mergesort([1, 12, 5, 3, 7, 12]))
+console.log(mergesort([1, 2, 5, 3, 7, 9, 3, 5]))
 
-function mergesort(array) {
+function mergesort(Arr) {
+    var array = Arr
 
-    var Arr = array
-
-    if (Arr.length % 4 != 0) {
-        
+    if (array.length < 2) {
+        return array
     }
 
-    var length = Arr.length
-
-    var Pieces = []
-
-    var Result = []
 
 
+    const middle = Math.floor(array.length / 2);
 
-    for (var i = 0; i < length; i++) {
-        console.log("iteration")
 
-        var pieceCache = []
-        if (Arr[1] > Arr[0]) {
-            pieceCache.push(Arr[0], Arr[1])
-        } else {
-            pieceCache.push(Arr[1], Arr[0])
-        }
+    const left = array.slice(0, middle);
+    const right = array.slice(middle);
 
-        Pieces.push(pieceCache)
+    return (merge(mergesort(left), mergesort(right)))
 
-        pieceCache = []
-        if (Arr[2] > Arr[3]) {
-            pieceCache.push(Arr[3], Arr[2])
-        } else {
-            pieceCache.push(Arr[2], Arr[3])
-        }
-        Pieces.push(pieceCache)
-
-        Pieces = merge(Pieces[0], Pieces[1])
-        Result.push(Pieces)
-        Pieces = []
-        for (var i = 0; i <= 4; i++) {
-        Arr.shift()
-        }
-
-    }
-
-    console.log("over!")
-    return Result
 }
 
 function merge(array, array2) {
@@ -213,7 +183,7 @@ function merge(array, array2) {
     var Arr2 = quicksort(array2)
     var Result = []
 
-   // console.log(Arr, Arr2, Result)
+    // console.log(Arr, Arr2, Result)
 
     var length = Arr2.length + Arr.length
 

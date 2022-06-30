@@ -19,15 +19,15 @@ function runProgram() {
     LEFT1: 39,
     DOWN1: 40,
 
-    UP2: null,
-    RIGHT2: null,    //p2 controls.
-    LEFT2: null,
-    DOWN2: null
+    UP2: 87,
+    RIGHT2: 68,    //p2 controls.
+    LEFT2: 65,
+    DOWN2: 83
   }
 
-  var player = { x: 0, y: 0 }
-  var velocity = { x: 0, y: 0 }
-  var inputVelocity = { x: 0, y: 0 }
+  var player = { x: 0, y: 0, x2: 0, y2: 0 }
+  var velocity = { x: 0, y: 0, x2: 0, y2: 0 }
+  var inputVelocity = { x: 0, y: 0, x2: 0, y2: 0 }
 
   const SPEED = 4
 
@@ -58,17 +58,23 @@ function runProgram() {
     velocity.x = inputVelocity.x * SPEED
     velocity.y = inputVelocity.y * SPEED
 
+    velocity.x2 = inputVelocity.x2 * SPEED
+    velocity.y2 = inputVelocity.y2 * SPEED
+
 
   };
 
   function moveAndSlide(object) {
 
     var $box = $("#box")
-    console.log($box)
+    console.log(player.y2)
 
 
     player.x += object.x;
     player.y += object.y;
+
+    player.x2 += object.x2;
+    player.y2 += object.y2;
 
     //$("gameItem").offset({ top: player.y, left: player.x });
 
@@ -76,6 +82,9 @@ function runProgram() {
 
     $("#gameItem").css("left", player.x)
     $("#gameItem").css("top", player.y)
+
+    $("#gameItem2").css("left", player.x2)
+    $("#gameItem2").css("top", player.y2)
 
 
 
@@ -102,7 +111,19 @@ function runProgram() {
         inputVelocity.y = 1
       };
 
+      if (event.which === inputMap.UP2) {
+        inputVelocity.y2 = -1
+        console.log(inputVelocity)
+      } else if (event.which === inputMap.RIGHT2) {
+        inputVelocity.x2 = 1
+      } else if (event.which === inputMap.LEFT2) {
+        inputVelocity.x2 = -1
+      } else if (event.which === inputMap.DOWN2) {
+        inputVelocity.y2 = 1
+
+      }
     }
+
     if (event.type === 'keyup') {
       if (event.which === inputMap.UP1) {
         inputVelocity.y = 0
@@ -112,25 +133,46 @@ function runProgram() {
         inputVelocity.x = 0
       } else if (event.which === inputMap.DOWN1) {
         inputVelocity.y = 0
+      }
+      if (event.which === inputMap.UP2) {
+        inputVelocity.y2 = 0
+      } else if (event.which === inputMap.RIGHT2) {
+        inputVelocity.x2 = 0
+      } else if (event.which === inputMap.LEFT2) {
+        inputVelocity.x2 = 0
+      } else if (event.which === inputMap.DOWN2) {
+        inputVelocity.y2 = 0
       };
+
+    };
+
+
+    if (event.type === 'keydown') {
+      if (event.which === inputMap.UP2) {
+
+      };
+
+    }
+    if (event.type === 'keyup') {
+
     }
 
-    console.log(inputVelocity)
+
 
 
   }
-
-  ////////////////////////////////////////////////////////////////////////////////
-  ////////////////////////// HELPER FUNCTIONS ////////////////////////////////////
-  ////////////////////////////////////////////////////////////////////////////////
+}
 
 
-  function endGame() {
-    // stop the interval timer
-    clearInterval(interval);
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////// HELPER FUNCTIONS ////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 
-    // turn off event handlers
-    $(document).off();
-  }
 
+function endGame() {
+  // stop the interval timer
+  clearInterval(interval);
+
+  // turn off event handlers
+  $(document).off();
 }
