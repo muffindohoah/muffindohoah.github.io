@@ -25,7 +25,8 @@ function runProgram() {
     DOWN2: 83
   }
 
-  var player = { x: 0, y: 0, x2: 0, y2: 0 }
+  var player = { x: 0, y: 0 }
+  var player2 = { x: 0, y: 0 }
   var velocity = { x: 0, y: 0, x2: 0, y2: 0 }
   var inputVelocity = { x: 0, y: 0, x2: 0, y2: 0 }
 
@@ -46,7 +47,6 @@ function runProgram() {
   */
   function newFrame() {
 
-    //input()
     varUpdate()
     moveAndSlide(velocity)
 
@@ -61,20 +61,54 @@ function runProgram() {
     velocity.x2 = inputVelocity.x2 * SPEED
     velocity.y2 = inputVelocity.y2 * SPEED
 
+    checkCollide(player)
+    checkCollide(player2)
+
+
+
 
   };
+
+  function checkCollide(object) {
+
+    const BOUNDS = {
+      top: 10,
+      bottom: 380,
+      left: -100,
+      right: -100
+    }
+
+
+
+    if (object.y < BOUNDS.top) {
+      object.y = BOUNDS.top
+    }
+    if (object.y > BOUNDS.bottom) {
+      object.y = BOUNDS.bottom
+
+    }
+    if (object.x < BOUNDS.right) {
+      object.x = BOUNDS.right
+    }
+    if (object.x > BOUNDS.left) {
+      object.x = BOUNDS.left
+
+    }
+
+
+  }
 
   function moveAndSlide(object) {
 
     var $box = $("#box")
-    console.log(player.y2)
+    //console.log(player2.y)
 
 
     player.x += object.x;
     player.y += object.y;
 
-    player.x2 += object.x2;
-    player.y2 += object.y2;
+    player2.x += object.x2;
+    player2.y += object.y2;
 
     //$("gameItem").offset({ top: player.y, left: player.x });
 
@@ -83,8 +117,8 @@ function runProgram() {
     $("#gameItem").css("left", player.x)
     $("#gameItem").css("top", player.y)
 
-    $("#gameItem2").css("left", player.x2)
-    $("#gameItem2").css("top", player.y2)
+    $("#gameItem2").css("left", player2.x)
+    $("#gameItem2").css("top", player2.y)
 
 
 
