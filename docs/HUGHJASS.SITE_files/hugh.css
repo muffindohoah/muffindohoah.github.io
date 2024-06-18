@@ -1,0 +1,106 @@
+body{
+  background-color:red; 
+  font-family:'Comic Sans MS',  'Comic Sans', 'chalkduster';
+}
+
+img{
+  float:right;
+height:150px;
+}
+
+#boxes {
+        content: "";
+        display: flex;
+        clear: both;
+     justify-content:space-evenly;
+    height:auto;
+    
+      }
+
+      div {
+        float:left;
+        width: 23%;
+        padding: 45px;
+      }
+      #column1 {
+        background-color: orange;
+        width:20%;
+        text-align:center;
+         transform: rotate(-0.02turn);
+          
+      }
+      #column2 {
+        display:flex;
+        flex-direction:column;
+background-color:yellow;
+        width: 40%;
+        text-align:center;
+         align-items:center;
+      }
+      #column3 {
+        background-color: orange;
+        width:20%;
+        text-align:center;
+        transform: rotate(0.02turn);
+}
+     
+      h2 {
+        color: #000000;
+        text-align: center;
+      }
+        
+header {
+  background-color: rgba(236, 255, 71,1);
+  flex-grow:1;
+  height:80px;
+  text-align:center;
+  padding:2px;
+  margin:20px;
+   
+}
+
+/*div:hover{
+    transform: rotate(180deg);
+}*/
+
+a{
+  color:red;
+  text-decoration:none;
+  transition:color 0.5s;
+}
+a:hover{  
+  color:blue;
+  text-decoration: underline;
+  background:rgba(225,225,0,0.9)
+}
+
+header:hover{
+ /* transform: rotate(180deg); 
+  background-color:blue;*/
+  transform: skew(10deg, 3deg);
+}
+
+.pics{
+  display:flex;
+  justify-content:center;
+}
+
+.header{
+  position:relative;
+    top: 0;
+    left:0;
+}
+.hughshot{
+   /*position:relative;
+  top:10px;
+ left:160px;*/
+  border: 7px solid orange;
+    transform:rotate(5deg);
+  }
+
+.jassshot{
+  /*top:10px;
+ left:190px;*/
+  transform:rotate(-5deg);
+  border: 7px solid orange;
+  }
