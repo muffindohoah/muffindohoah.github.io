@@ -1,0 +1,34 @@
+body{
+    color: aliceblue;
+    background-color:  #15162a;
+}
+.banner{
+    margin: auto;
+  width: 27%;
+  border: 3px solid #73AD21;
+  padding:10px;
+    height:200px;
+}
+.center {
+background-image: url("./assets/div-bg-mosh.png");
+  margin: auto;
+  width: 40%;
+  border: 3px solid #73AD21;
+  padding: 10px;
+background-repeat: no-repeat, no-repeat;
+background-position: right, left;
+    height:200px;
+}
+img {
+        margin: auto;
+        height:80px;
+}
+h1 {
+    font-family: serif;
+    margin: auto;
+  color: antiquewhite;
+}
+p {
+    margin: 30;
+  color: antiquewhite;
+}
