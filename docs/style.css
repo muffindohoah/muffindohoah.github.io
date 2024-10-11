@@ -1,32 +1,38 @@
+
+
 body{
     color: aliceblue;
     background-color:  #15162a;
 }
 .banner{
     margin: auto;
-  width: 27%;
-  border: 3px solid #73AD21;
+  width: 30%;
+  border: 3px solid black;
   padding:10px;
-    height:200px;
+    height:100px;
 }
 .center {
 background-image: url("./assets/div-bg-mosh.png");
   margin: auto;
-  width: 40%;
+  width: 30%;
   border: 3px solid #73AD21;
   padding: 10px;
 background-repeat: no-repeat, no-repeat;
 background-position: right, left;
-    height:200px;
+    height:450px;
 }
 img {
         margin: auto;
-        height:80px;
+        height:51px;
+    background-color: black;
 }
 h1 {
-    font-family: serif;
+    font-family: 'Trebuchet MS', sans-serif;
     margin: auto;
   color: antiquewhite;
+}
+.desc{
+    margin: 20;
 }
 p {
     margin: 30;
