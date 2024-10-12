@@ -6,7 +6,7 @@ body{
 }
 .banner{
     margin: auto;
-  width: 30%;
+  width: 60%;
   border: 3px solid black;
   padding:10px;
     height:100px;
@@ -37,4 +37,15 @@ h1 {
 p {
     margin: 30;
   color: antiquewhite;
+}
+
+@media only screen and (max-width: 1040px){
+    .banner{
+        width: 65%;
+        height:120px;
+    }
+    .center{
+        width: 70%;
+        height:600px;
+    }
 }
