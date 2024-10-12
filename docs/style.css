@@ -42,10 +42,10 @@ p {
 @media only screen and (max-width: 1040px){
     .banner{
         width: 65%;
-        height:120px;
+        height:220px;
     }
     .center{
         width: 70%;
-        height:600px;
+        height:700px;
     }
 }
