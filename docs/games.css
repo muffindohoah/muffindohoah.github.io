@@ -12,6 +12,8 @@ body{
     height:125px;
 }
 .center {
+    align-self: center;
+    text-align: center;
 background-color: rgba(168, 175, 185, 0.45);
   margin: auto;
   width: 60%;
@@ -24,8 +26,11 @@ background-position: right, left;
 .image{ height:fit-content
 }
 img {
-        margin: auto;
-        height:51px;
+        margin:auto;
+        align-content: center;
+    align-items: center;
+    align-self: center;
+        height:174px;
     background-color: black;
 }
 h1 {
