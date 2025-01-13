@@ -1,0 +1,58 @@
+
+
+body{
+    color: #000000;
+    background-image: url(assets/trees.jpg)
+}
+.banner{
+    margin: auto;
+  width: 45%;
+  border: 3px solid black;
+  padding:10px;
+    height:125px;
+}
+.center {
+background-color: rgba(168, 175, 185, 0.45);
+  margin: auto;
+  width: 60%;
+  border: 3px solid #080319;
+  padding: 10px;
+background-repeat: no-repeat, no-repeat;
+background-position: right, left;
+    height:689px;
+}
+.image{ height:fit-content
+}
+img {
+        margin: auto;
+        height:51px;
+    background-color: black;
+}
+h1 {
+    font-family: 'Trebuchet MS', sans-serif;
+    text-decoration:wavy;
+    text-align: center;
+    margin: auto;
+   background-image: url(assets/Screenshot%202024-10-10%20014341.png);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.desc{
+    margin: 20;
+}
+p {
+    margin: 30;
+  color: antiquewhite;
+}
+
+@media only screen and (max-width: 1040px){
+    .banner{
+        width: 65%;
+        height:220px;
+    }
+    .center{
+        width: 70%;
+        height:700px;
+    }
+}
